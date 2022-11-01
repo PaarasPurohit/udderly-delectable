@@ -7,6 +7,37 @@
 <!- This is a replacement block for Body in base.html -->
 {% block body %}
     <!- Try building a new body here, bootstrap is a wise choice ->
+<<<<<<< HEAD
+<body>
+  <img src="find something cool, get the link or put it in the repo, and replace that 
+  path with the text">
+  <button class="btn btn-primary" function="getMotivationalQuote()">Get A Quote</button>
+  <p class="card-text" id="happy_quote">Press the button to replace this text with a motivational quote.</p>
+
+  <script>
+    const options = {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        'X-RapidAPI-Key': 'f9e05fed4fmshda97f8933d9e076p192198jsn5018f8cb51c3',
+        'X-RapidAPI-Host': 'motivational-quotes1.p.rapidapi.com'
+      },
+      body: '{"key1":"value","key2":"value"}'
+    };
+    
+    let fetchedAPI = fetch('https://motivational-quotes1.p.rapidapi.com/motivation', options)
+      .then(response => response.json())
+      .then(response => console.log(response))
+      .catch(err => console.error(err));
+
+      function getMotivationalQuote() {
+        const something = JSON.parse(fetchedAPI);
+        let result = Object.keys(something).map(function(_) { return something[_]; });
+        document.getElementByID("happy_quote").innerHTML = result;
+      }
+  </script>
+</body>
+=======
     <div class="px-5 py-5 mx-auto">
         <h1 class="text-primary"><strong>Inspirational</strong></h1>
         <style>
@@ -47,6 +78,7 @@
         
         <p class="text-secondary"></p>
     </div>
+>>>>>>> b7b7b6ccd0b96cb551bbe28bffe4d9e9db137eb9
 {% endblock %}
 
 <!- This is turning off birds background from base.html -->
