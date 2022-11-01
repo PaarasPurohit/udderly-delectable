@@ -9,25 +9,42 @@
     <!- Try building a new body here, bootstrap is a wise choice ->
     <div class="px-5 py-5 mx-auto">
         <h1 class="text-primary"><strong>Inspirational</strong></h1>
-        <p class="text-secondary">
-            <table>
-                <tr>
-                  <th>Quote</th>
-                  <th>helped</th>
-                  <th>useless</th>
-                </tr>
-                <tr>
-                  <td>Everyday is a chance to be better.</td>
-                  <td>0</td>
-                  <td>0</td>
-                </tr>
-                <tr>
-                  <td>Big Jourey start off with small steps.</td>
-                  <td>0</td>
-                  <td>0</td>
-                </tr>
-              </table>
-        </p>
+        <style>
+          table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+          }
+          
+          td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+          }
+          
+          tr:nth-child(even) {
+            background-color: #dddddd;
+          }
+          </style>
+        
+        <table>
+          <tr>
+            <th>Quote</th>
+            <th>helped</th>
+            <th>useless</th>
+          </tr>
+          <tr>
+            <td>Everyday is a chance to be better.</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>Big Jourey start off with small steps.</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+        </table>
+        
         <p class="text-secondary"></p>
     </div>
 {% endblock %}
