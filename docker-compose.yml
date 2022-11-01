@@ -1,16 +1,16 @@
 version: '3'
 services:
-        web:
-                image: udderly-delectable
-                build: .
-                ports:
-                        - "8052:8080"
-                volumes:
-                        - persistent_volume:/app/volumes
+      web:
+              image: flask_udderly_delectable
+              build: .
+              ports:
+                      - "8052:8080"
+              volumes:
+                      - persistent_volume:/app/volumes
 volumes:
   persistent_volume:
     driver: local
     driver_opts:
       o: bind
       type: none
-      device: /home/ubuntu/flask_portfolio/volumes
+      device: /home/ubuntu/T8052_udderly_delectable/volumes
