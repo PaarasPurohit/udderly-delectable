@@ -1,12 +1,9 @@
 <!-- Extending the predefined project layout -->
 {% extends "layouts/base.html" %}
 
-<!- This variable sets name of browser tab  -->
 {% set project = "About" %}
 
-<!- This is a replacement block for Body in base.html -->
-{% block body %}
-    <!- Try building a new body here, bootstrap is a wise choice ->
+{% block body %}   
     <div class="px-5 py-5 mx-auto">
         <h1 class="text-primary"><strong>About</strong></h1>
         <p class="text-secondary">A page of the team members</p>
@@ -22,6 +19,8 @@
                                 <li>I started coding with this class</li>
                                 <li>I play a lot of games, my favorite being BO3 Zombies and Terraria</li>
                                 <li>I know where you live</li>
+                                <li>Best Frontend of all time.</li>
+                                <li>Longest most scruptous hair of all time.</li>
                             </al>
                         </p>
                     </div>
@@ -34,8 +33,8 @@
                         <h5 class="card-title">Paris</h5>
                         <p class="card-text">
                             <al>
-                                <li>a</li>
-                                <li>b</li>
+                                <li>Loves tea drinking.</li>
+                                <li>Got a dumptruck.</li>
                             </al>
                         </p>
                     </div>
@@ -50,8 +49,7 @@
                         <h5 class="card-title">Haoxuan</h5>
                         <p class="card-text">
                             <al>
-                                <li>a</li>
-                                <li>b</li>
+                                <li>Is Haoxuan</li>
                             </al>
                         </p>
                     </div>
@@ -61,11 +59,11 @@
                 <div class="card">
                     <div class="card-body">
                         <img class="card-img-top" src="{{ url_for('static', filename='assets/python.jpeg') }}" alt="Python Development" height="375">
-                        <h5 class="card-title">samat</h5>
+                        <h5 class="card-title">Samarth</h5>
                         <p class="card-text">
                             <al>
-                                <li>a</li>
-                                <li>b</li>
+                                <li>So very beautiful and hot.</li>
+                                <li>Does many things and is so amazing.</li>
                             </al>
                         </p>
                     </div>
@@ -75,6 +73,6 @@
     </div>
 {% endblock %}
 
-<!- This is turning off birds background from base.html -->
+
 {% block background %}
 {% endblock %}
