@@ -26,7 +26,7 @@ def about():
     return render_template("about.html")
 
 @app.route('/chart/')
-def about():
+def chart():
     return render_template("chart.html")
 
 # this runs the application on the development server
