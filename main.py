@@ -56,6 +56,10 @@ def api_quotes():
 def about():
     return render_template("about.html")
 
+@app.route('/chart/')
+def chart():
+    return render_template("chart.html")
+
 # this runs the application on the development server
 if __name__ == "__main__":
     app.run(debug=True)
