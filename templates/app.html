@@ -7,27 +7,78 @@
 <!- This is a replacement block for Body in base.html -->
 {% block body %}
     <!- Try building a new body here, bootstrap is a wise choice ->
+<body>
+  <img src="find something cool, get the link or put it in the repo, and replace that 
+  path with the text">
+  <button class="btn btn-primary" function="getMotivationalQuote()">Get A Quote</button>
+  <p class="card-text" id="happy_quote">Press the button to replace this text with a motivational quote.</p>
+
+  <script>
+    const options = {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        'X-RapidAPI-Key': 'f9e05fed4fmshda97f8933d9e076p192198jsn5018f8cb51c3',
+        'X-RapidAPI-Host': 'motivational-quotes1.p.rapidapi.com'
+      },
+      body: '{"key1":"value","key2":"value"}'
+    };
+    
+    let fetchedAPI = fetch('https://motivational-quotes1.p.rapidapi.com/motivation', options)
+      .then(response => response.json())
+      .then(response => console.log(response))
+      .catch(err => console.error(err));
+
+      function getMotivationalQuote() {
+        const something = JSON.parse(fetchedAPI);
+        let result = Object.keys(something).map(function(_) { return something[_]; });
+        document.getElementByID("happy_quote").innerHTML = result;
+      }
+  </script>
+</body>
     <div class="px-5 py-5 mx-auto">
         <h1 class="text-primary"><strong>Inspirational</strong></h1>
+<<<<<<< HEAD
         <p class="text-secondary">
-            <table>
-                <tr>
-                  <th>Quote</th>
-                  <th>Likes</th>
-                  <th>Dislikes</th>
-                </tr>
-                <tr>
-                  <td>Everyday is a chance to be better.</td>
-                  <td>0</td>
-                  <td>0</td>
-                </tr>
-                <tr>
-                  <td>Big Jourey start off with small steps.</td>
-                  <td>0</td>
-                  <td>0</td>
-                </tr>
-              </table>
         </p>
+=======
+        <style>
+          table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+          }
+          
+          td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+          }
+          
+          tr:nth-child(even) {
+            background-color: #dddddd;
+          }
+          </style>
+        
+        <table>
+          <tr>
+            <th>Quote</th>
+            <th>helped</th>
+            <th>useless</th>
+          </tr>
+          <tr>
+            <td>Everyday is a chance to be better.</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>Big Jourey start off with small steps.</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+        </table>
+        
+>>>>>>> 7e6c2f297b352fbc3f225ae68fc6d8d5588b7a98
         <p class="text-secondary"></p>
     </div>
 {% endblock %}

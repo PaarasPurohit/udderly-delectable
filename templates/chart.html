@@ -1,0 +1,116 @@
+{% extends "layouts/base.html" %}
+
+<!- This variable sets name of browser tab  -->
+{% set project = "Chart" %}
+
+<!- This is a replacement block for Body in base.html -->
+{% block body %}
+<<<<<<< HEAD
+    <p></p>
+=======
+    <table>
+        <thead>
+            <th>Quote</th>
+            <th>Helped</th>
+            <th>Useless</th>
+        </thead>
+        <tbody id="result"></tbody>
+    </table>
+    <script>
+        const resultContainer = document.getElementById("result");
+
+        const HELPED = "helped";
+        const USELESS = "useless";
+
+        const url =  "http://udderly.nighthawkcodingteams.cf/api/quotes/";
+        const help_url = url + "help/";
+        const useless_url = url + "useless/";
+
+        const options = {
+            method: 'GET',
+            mode: 'cors',
+            cache: 'default',
+            credentials: 'omit',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        };
+        const put_options = {...options, method: 'PUT'};
+
+        fetch(url, options)
+            .then(response => {
+                if (response.status !== 200) {
+                    error('GET API response failure: ' + response.status);
+                    return;
+                }
+                response.json().then(data => {
+                    console.log(data);
+                    for (const row of data) {
+                        const tr = document.createElement("tr");
+                        const quote = document.createElement("td");
+                          quote.innerHTML = row.id + ". " + row.quote;
+                        const helped = document.createElement("td");
+                          const helped_but = document.createElement('button');
+                          helped_but.id = HELPED+row.id;
+                          helped_but.innerHTML = row.helped;
+                          helped_but.onclick = function () {
+                            reaction(HELPED, help_url+row.id, helped_but.id);
+                          };
+                          helped.appendChild(helped_but);
+                        const useless = document.createElement("td");
+                          const useless_but = document.creaetElement('button');
+                          useless_but.id = USELESS_row.id
+                          useless_but.innerHTML = row.useless;
+                          useless_but.onclick = function () {
+                            reaction(USELESS, useless_url+row.id, useless_but.id);
+                          };
+                          useless.appendChild(useless_but);
+                        
+                        tr.appendChild(quote);
+                        tr.appendChild(helped);
+                        tr.appendChild(useless);
+
+                        resultContainer.appendChild(tr);
+                    }
+                })
+            })
+
+            .catch(err => {
+                error(err + " " + url);
+            });
+
+            function reaction(type, put_url, elemID) {
+                fetch(put_url, put_options)
+                .then(response => {
+                    if (response.status !== 200) {
+                        error("PUT API response failure: " + response.status)
+                        return;
+                    }
+                    response.json().then(data => {
+                        console.log(data);
+                        if (type === HELPED)
+                            document.getElementById(elemID).innerHTML = data.helped;
+                        else if (type === USELESS)
+                            document.getElementById(elemID).innerHTML = data.useless;
+                        else
+                            error("unknown type: " + type);
+                        
+                    })
+                })
+                .catch(err => {
+                    error(err + " " + put_url);
+                });
+            }
+            function error(err) {
+                console.error(err);
+                const tr = document.createElement("tr");
+                const td = document.createElement("td");
+                td.innerHTML = err;
+                tr.appendChild(td);
+                resultContainer.appendChild(tr);
+            }
+    </script>
+{% endblock %}
+{% block background %}
+>>>>>>> be93adb901aa94968daf918b5fe86d2ffe88d2ff
+{% endblock %}
