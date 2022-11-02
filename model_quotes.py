@@ -102,10 +102,10 @@ if __name__ == "__main__":
     
     # Most likes and most jeered
     best = favoriteQuote()
-    print("Most liked", best['haha'])
+    print("Most liked", best['helped'])
     printQuote(best)
     worst = jeeredQuote()
-    print("Most jeered", worst['boohoo'])
+    print("Most jeered", worst['useless'])
     printQuote(worst)
     
     # Random joke
