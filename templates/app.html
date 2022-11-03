@@ -7,83 +7,88 @@
 <!- This is a replacement block for Body in base.html -->
 {% block body %}
     <!- Try building a new body here, bootstrap is a wise choice ->
-<<<<<<< HEAD
-<body>
-  <img src="find something cool, get the link or put it in the repo, and replace that 
-  path with the text">
-  <button class="btn btn-primary" function="getMotivationalQuote()">Get A Quote</button>
-  <p class="card-text" id="happy_quote">Press the button to replace this text with a motivational quote.</p>
+    <div class="row" style="margin-left:2%; margin-top:2%;">
+      <div class="col-4">
+          <div class="card" style="background-color:#ffea6c">
+            <p style="color:#888888">Click the button to get a happy quote</p>
 
-  <script>
-    const options = {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-        'X-RapidAPI-Key': 'f9e05fed4fmshda97f8933d9e076p192198jsn5018f8cb51c3',
-        'X-RapidAPI-Host': 'motivational-quotes1.p.rapidapi.com'
-      },
-      body: '{"key1":"value","key2":"value"}'
-    };
-    
-    let fetchedAPI = fetch('https://motivational-quotes1.p.rapidapi.com/motivation', options)
-      .then(response => response.json())
-      .then(response => console.log(response))
-      .catch(err => console.error(err));
+            <button class="btn btn-primary" onclick="getHappyQuote()" align="center">Happy Quote</button>
+            <br><br>
+            <p id="happyQuote" style="color:#888888"></p>
+          </div>
+      </div>
+      <div class="col-4">
+          <div class="card" style="background-color:#54fffb">
+                <p style="color:#888888">Click the button to get an inspirational quote</p>
+                <button class="btn btn-primary" onclick="getInspirationalQuote()" align="center">Inspirational Quote</button>
+                <br><br>
+                <p id="inspirationalQuote" style="color:#888888"></p>
+              </div>
+          </div>
+      </div>
+      <div class="col-4" style="margin-left:2%; margin-top:2%;">
+          <div class="card" style="background-color:#89ffcc">
+                <p style="color:#888888">Click the button to get a truthful quote</p>
+                <button class="btn btn-primary" onclick="getTruthfulQuote()" align="center">Truthful Quote</button>
+                <br><br>
+                <p id="truthfulQuote" style="color:#888888" ></p>
+              </div>
+          </div>
+      </div>
+      
+  </div>
+</div>
+    <script>
+      
+      const happyQuotes = [
+      "Be Happy. Be Bright. Be You. - Kate Spade",
+      "Being happy is the greatest form of success. - Unknown",
+      "There is no path to happiness. Happniess is the path. - Buddha",
+      "Be healthy and take care of yourself, but be happy with the beautiful things that make you, you. - Beyonce.",
+      "Learn to let go. That is the key to happiness. - Buddha",
+      "Be happy with what you have. Be excited about what you want. - Alan Cohen",
+      "Nobody can make you happy unless you're happy with yourself first. - Unknown",
+      "Being happy never goes out of style. - Lilly Pulitzer",
+      "Be happy for this moment. This moment is your life. - Omar Khayyam",
+      "Stop feeling sorry for yourself and you will be happy. - Stephen Fry",
+      ]
+      
+      const inspirationalQuotes = [
+      "There is always light. If only we're brave enough to see it. If only we're brave enough to be it. - Amanda Gordon",
+      "Out of the mountain of despair, a stone of hope. - Martin Luther King, Jr.",
+      "Opportunity is missed by most people it is dressed in overalls and looks like work. - Thomas Edison",
+      "You're braver than you believe, stronger than you seem, and smarter than you think. - A.A. Milne",
+      "When you've got a dream, you've got to grab it and never let it go. - Carol Burnett",
+      "Success is not final. Failure is not fatal. It is the courage to continue that counts. - Winston Churchill",
+      "Life is 10% what happens to you and 90% how you react to it. - Charles R. Swindoll",
+      "Act as if what you do makes a difference. IT DOES. - William James",
+      "Don't spend time beating on a wall, hoping to transform it into a door. - Coco Chanel",
+      "It is never too late to be who you might have been. - George Elliot",
+      ]
 
-      function getMotivationalQuote() {
-        const something = JSON.parse(fetchedAPI);
-        let result = Object.keys(something).map(function(_) { return something[_]; });
-        document.getElementByID("happy_quote").innerHTML = result;
+      const truthfulQuotes = [
+      "Being honest may not get you a lot of friends but it'll always get you the right ones. - John Lennon",
+      "Sincerity and truth are the basis of every virtue. - Confucius",
+      "Honesty is often very hard. The truth is often painful. But the freedom it can bring is worth the trying. - Fred Rogers",
+      "In a time of deceit, telling the truth is a revolutionary act. - George Orwell",
+      "Be truthful, gentle, and fearless. - Gandhi",
+      "The life of the nation is secure only while the nation is honest, truthful, and virtuous.",
+      "Humility is all about being truthful and honest. - Radhanath Swami",
+      "Truthfulness is the main element of character. - Brian Tracy",
+      "Silence becomes cowardice when occastion demands speaking out the whole truth and acting accordingly. - Mahatma Gandhi",
+      "If you are out to describe the truth, leave elegance to the tailor. - Albert Einstein",
+      ]
+
+      function getHappyQuote() {
+        document.getElementById("happyQuote").innerHTML = happyQuotes[Math.floor(Math.random() * 10)];
       }
-  </script>
-</body>
-=======
-    <div class="px-5 py-5 mx-auto">
-        <h1 class="text-primary"><strong>Inspirational</strong></h1>
-<<<<<<< HEAD
-        <p class="text-secondary">
-        </p>
-=======
-        <style>
-          table {
-            font-family: arial, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-          }
-          
-          td, th {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-          }
-          
-          tr:nth-child(even) {
-            background-color: #dddddd;
-          }
-          </style>
-        
-        <table>
-          <tr>
-            <th>Quote</th>
-            <th>helped</th>
-            <th>useless</th>
-          </tr>
-          <tr>
-            <td>Everyday is a chance to be better.</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <td>Big Jourey start off with small steps.</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-        </table>
-        
->>>>>>> 7e6c2f297b352fbc3f225ae68fc6d8d5588b7a98
-        <p class="text-secondary"></p>
-    </div>
->>>>>>> b7b7b6ccd0b96cb551bbe28bffe4d9e9db137eb9
+      function getInspirationalQuote() {
+        document.getElementById("inspirationalQuote").innerHTML = inspirationalQuotes[Math.floor(Math.random() * 10)];
+      }
+      function getTruthfulQuote() {
+        document.getElementById("truthfulQuote").innerHTML = truthfulQuotes[Math.floor(Math.random() * 10)];
+      }
+    </script>
 {% endblock %}
 
 <!- This is turning off birds background from base.html -->

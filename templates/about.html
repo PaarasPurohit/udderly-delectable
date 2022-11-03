@@ -1,9 +1,12 @@
 <!-- Extending the predefined project layout -->
 {% extends "layouts/base.html" %}
 
+<!- This variable sets name of browser tab  -->
 {% set project = "About" %}
 
-{% block body %}   
+<!- This is a replacement block for Body in base.html -->
+{% block body %}
+    <!- Try building a new body here, bootstrap is a wise choice ->
     <div class="px-5 py-5 mx-auto">
         <h1 class="text-primary"><strong>About</strong></h1>
         <p class="text-secondary">A page of the team members</p>
@@ -11,16 +14,10 @@
             <div class="col-6">
                 <div class="card">
                     <div class="card-body">
-                        <img class="card-img-top" src="{{ url_for('static', filename='assets/python.jpeg') }}" alt="Python Development" height="375">
                         <h5 class="card-title">AJ</h5>
                         <p class="card-text">
                             <al>
-                                <li>I am the frontend developer, I made this page.</li>
-                                <li>I started coding with this class</li>
-                                <li>I play a lot of games, my favorite being BO3 Zombies and Terraria</li>
-                                <li>I know where you live</li>
-                                <li>Best Frontend of all time.</li>
-                                <li>Longest most scruptous hair of all time.</li>
+                                Frontend Dev
                             </al>
                         </p>
                     </div>
@@ -29,12 +26,10 @@
             <div class="col-6">
                 <div class="card">
                     <div class="card-body">
-                        <img class="card-img-top" src="{{ url_for('static', filename='assets/python.jpeg') }}" alt="Python Development" height="375">
-                        <h5 class="card-title">Paris</h5>
+                        <h5 class="card-title">Paaras</h5>
                         <p class="card-text">
                             <al>
-                                <li>Loves tea drinking.</li>
-                                <li>Got a dumptruck.</li>
+                                DevOps
                             </al>
                         </p>
                     </div>
@@ -45,14 +40,10 @@
             <div class="col-6">
                 <div class="card">
                     <div class="card-body">
-                        <img class="card-img-top" src="{{ url_for('static', filename='assets/python.jpeg') }}" alt="Python Development" height="375">
                         <h5 class="card-title">Haoxuan</h5>
                         <p class="card-text">
                             <al>
-                                <li>I'm the Backend of this project.</li>
-                                <li>I made what goes on behind the page.</li>
-                                <li>I started coding 4 years ago.</li>
-                                <li>You will die in 48 hours.</li>
+                                Backend Developer
                             </al>
                         </p>
                     </div>
@@ -61,12 +52,10 @@
             <div class="col-6">
                 <div class="card">
                     <div class="card-body">
-                        <img class="card-img-top" src="{{ url_for('static', filename='assets/python.jpeg') }}" alt="Python Development" height="375">
                         <h5 class="card-title">Samarth</h5>
                         <p class="card-text">
                             <al>
-                                <li>So very beautiful and hot.</li>
-                                <li>Does many things and is so amazing.</li>
+                                Scrum Master
                             </al>
                         </p>
                     </div>
@@ -76,6 +65,6 @@
     </div>
 {% endblock %}
 
-
+<!- This is turning off birds background from base.html -->
 {% block background %}
 {% endblock %}
