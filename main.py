@@ -21,7 +21,7 @@ def index():
     return render_template("index.html")
 
 @app.route('/app/')  # connects /stub/ URL to stub() function
-def stub():
+def app():
     return render_template("app.html")
 
 @app.route('/api/quotes',methods=["GET","POST"])  # connects /stub/ URL to stub() function
